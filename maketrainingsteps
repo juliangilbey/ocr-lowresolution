@@ -1,0 +1,10 @@
+#!/bin/bash -e
+
+scaling=$1
+blur=$2
+if [ $# -gt 2 ]; then res=$3; else res=60; fi
+if [ $# -gt 3 ]; then step=$4; else step=1; fi
+while [ $step -le 10 ]; do
+    make RES=$res SCALING=$scaling BLUR=$blur MAX_ITERATIONS=17421 STEP=$step trainingstep
+    step=$(($step + 1))
+done
