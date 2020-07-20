@@ -178,7 +178,7 @@ training:
 else
 
 $(TESSDATA)/$(LANG_NAME)/$(LANG_NAME).traineddata:
-	cd $(TESSDATA) && wget "https://github.com/tesseract-ocr/tessdata_best/raw/master/$(notdir $@)"
+	cd $(TESSDATA)/$(LANG_NAME) && wget "https://github.com/tesseract-ocr/tessdata_best/raw/master/$(notdir $@)"
 
 $(TESSDATA)/$(LANG_NAME)/$(LANG_NAME).lstm: $(TESSDATA)/$(LANG_NAME)/$(LANG_NAME).traineddata
 	cd $(TESSDATA)/$(LANG_NAME) && \
