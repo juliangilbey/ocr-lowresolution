@@ -31,9 +31,6 @@ calculated if this file exists, and the results will be output to
 <img>.metrics
 """
 
-home = os.environ.get('HOME', '/Users/jdg')
-tessdatadir = home + '/Cognizant/tesstrain/'
-
 arg_parser = argparse.ArgumentParser(
     description='Processes images with multiple tesseract runs')
 
@@ -66,7 +63,7 @@ arg_parser.add_argument('--tessenv', action='append',
                         help='Add this to the tesseract environment, eg '
                              '"DYLD_LIBRARY_PATH=../tesseract/src/api/.libs"'
                              ' Can be used multiple times')
-arg_parser.add_argument('--tessdata-path', default=tessdatadir,
+arg_parser.add_argument('--tessdata-path', required=True,
                         help='Use this path to the tessdata directory')
 arg_parser.add_argument('--tessdata', default='dataRES_SCALING+BLUR',
                         help='Use this directory for the tessdata; '
