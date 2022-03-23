@@ -36,7 +36,7 @@ LANG_NAME = eng
 # Name of the model to continue from. Default: $(START_MODEL)
 START_MODEL = 
 
-# Data directory (will contained traineddata file)
+# Data directory (will contain traineddata file)
 DATA = $(TESSTRAIN)/data$(RES)_$(SCALING_NAME)+$(BLUR)
 
 # Where the training text line images and ground truths live
